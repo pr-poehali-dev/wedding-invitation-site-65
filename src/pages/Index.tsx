@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -15,6 +15,35 @@ const Index = () => {
     message: '',
     attending: true
   });
+
+  const weddingDate = new Date('2026-08-15T15:00:00');
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0
+  });
+
+  useEffect(() => {
+    const calculateTimeLeft = () => {
+      const now = new Date();
+      const difference = weddingDate.getTime() - now.getTime();
+
+      if (difference > 0) {
+        setTimeLeft({
+          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+          minutes: Math.floor((difference / 1000 / 60) % 60),
+          seconds: Math.floor((difference / 1000) % 60)
+        });
+      }
+    };
+
+    calculateTimeLeft();
+    const timer = setInterval(calculateTimeLeft, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -64,7 +93,38 @@ const Index = () => {
           <h1 className="text-6xl md:text-8xl font-light text-foreground mb-4">Анна & Дмитрий</h1>
           <Separator className="w-24 mx-auto bg-primary/30" />
           <p className="text-xl md:text-2xl text-muted-foreground font-light">15 августа 2026</p>
-          <p className="text-lg text-muted-foreground">Приглашаем вас разделить с нами этот особенный день</p>
+          
+          <div className="max-w-3xl mx-auto mt-8">
+            <p className="text-lg text-muted-foreground mb-6">До самого важного дня осталось</p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <Card className="p-6 bg-card/80 backdrop-blur">
+                <div className="text-4xl md:text-5xl font-light text-primary mb-2">
+                  {timeLeft.days}
+                </div>
+                <div className="text-sm text-muted-foreground">дней</div>
+              </Card>
+              <Card className="p-6 bg-card/80 backdrop-blur">
+                <div className="text-4xl md:text-5xl font-light text-primary mb-2">
+                  {timeLeft.hours}
+                </div>
+                <div className="text-sm text-muted-foreground">часов</div>
+              </Card>
+              <Card className="p-6 bg-card/80 backdrop-blur">
+                <div className="text-4xl md:text-5xl font-light text-primary mb-2">
+                  {timeLeft.minutes}
+                </div>
+                <div className="text-sm text-muted-foreground">минут</div>
+              </Card>
+              <Card className="p-6 bg-card/80 backdrop-blur">
+                <div className="text-4xl md:text-5xl font-light text-primary mb-2">
+                  {timeLeft.seconds}
+                </div>
+                <div className="text-sm text-muted-foreground">секунд</div>
+              </Card>
+            </div>
+          </div>
+
+          <p className="text-lg text-muted-foreground mt-6">Приглашаем вас разделить с нами этот особенный день</p>
           <Button 
             variant="default" 
             size="lg" 
