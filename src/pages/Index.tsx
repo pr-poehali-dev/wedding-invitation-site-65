@@ -90,7 +90,7 @@ const Index = () => {
         }}
       >
         <div className="text-center space-y-6 animate-fade-in px-4">
-          <h1 className="text-6xl md:text-8xl font-light text-foreground mb-4">Анна & Дмитрий</h1>
+          <h1 className="text-6xl md:text-8xl font-light text-foreground mb-4">Ольга & Алексей</h1>
           <Separator className="w-24 mx-auto bg-primary/30" />
           <p className="text-xl md:text-2xl text-muted-foreground font-light">15 августа 2026</p>
           
@@ -349,7 +349,7 @@ const Index = () => {
             <Card className="p-8">
               <h3 className="text-2xl font-medium mb-4">Невеста</h3>
               <div className="space-y-3 text-muted-foreground">
-                <p className="text-lg">Анна Петрова</p>
+                <p className="text-lg">Ольга</p>
                 <div className="flex items-center justify-center gap-2">
                   <Icon name="Phone" size={18} />
                   <a href="tel:+79001234567" className="hover:text-primary transition-colors">
@@ -362,7 +362,7 @@ const Index = () => {
             <Card className="p-8">
               <h3 className="text-2xl font-medium mb-4">Жених</h3>
               <div className="space-y-3 text-muted-foreground">
-                <p className="text-lg">Дмитрий Сидоров</p>
+                <p className="text-lg">Алексей</p>
                 <div className="flex items-center justify-center gap-2">
                   <Icon name="Phone" size={18} />
                   <a href="tel:+79009876543" className="hover:text-primary transition-colors">
@@ -381,7 +381,7 @@ const Index = () => {
 
       <footer className="py-12 text-center text-muted-foreground">
         <Icon name="Heart" className="mx-auto mb-4 text-primary" size={32} />
-        <p className="text-lg">С любовью, Анна и Дмитрий</p>
+        <p className="text-lg">С любовью, Ольга и Алексей</p>
         <p className="text-sm mt-2">15.08.2026</p>
       </footer>
     </div>
