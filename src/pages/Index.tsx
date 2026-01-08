@@ -16,7 +16,7 @@ const Index = () => {
     attending: true
   });
 
-  const weddingDate = new Date('2026-08-15T15:00:00');
+  const weddingDate = new Date('2026-04-24T15:00:00');
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -92,7 +92,7 @@ const Index = () => {
         <div className="text-center space-y-6 animate-fade-in px-4">
           <h1 className="text-6xl md:text-8xl font-light text-foreground mb-4">Ольга & Алексей</h1>
           <Separator className="w-24 mx-auto bg-primary/30" />
-          <p className="text-xl md:text-2xl text-muted-foreground font-light">15 августа 2026</p>
+          <p className="text-xl md:text-2xl text-muted-foreground font-light">24 апреля 2026</p>
           
           <div className="max-w-3xl mx-auto mt-8">
             <p className="text-lg text-muted-foreground mb-6">До самого важного дня осталось</p>
@@ -273,7 +273,7 @@ const Index = () => {
           <Icon name="Mail" className="mx-auto mb-6 text-primary" size={48} />
           <h2 className="text-5xl md:text-6xl font-light text-foreground mb-6">Подтверждение</h2>
           <p className="text-lg text-muted-foreground">
-            Пожалуйста, подтвердите своё участие до 1 августа 2026
+            Пожалуйста, подтвердите своё участие до 10 апреля 2026
           </p>
         </div>
 
@@ -382,7 +382,7 @@ const Index = () => {
       <footer className="py-12 text-center text-muted-foreground">
         <Icon name="Heart" className="mx-auto mb-4 text-primary" size={32} />
         <p className="text-lg">С любовью, Ольга и Алексей</p>
-        <p className="text-sm mt-2">15.08.2026</p>
+        <p className="text-sm mt-2">24.04.2026</p>
       </footer>
     </div>
   );
