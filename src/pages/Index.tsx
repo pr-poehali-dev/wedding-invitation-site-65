@@ -90,7 +90,7 @@ const Index = () => {
         }}
       >
         <div className="text-center space-y-6 animate-fade-in px-4">
-          <h1 className="text-6xl md:text-8xl font-light text-foreground mb-4">Ольга & Алексей</h1>
+          <h1 className="text-6xl md:text-8xl font-light text-foreground mb-4">Алексей & Ольга</h1>
           <Separator className="w-24 mx-auto bg-primary/30" />
           <p className="text-xl md:text-2xl text-muted-foreground font-light">24 апреля 2026</p>
           
@@ -381,7 +381,7 @@ const Index = () => {
 
       <footer className="py-12 text-center text-muted-foreground">
         <Icon name="Heart" className="mx-auto mb-4 text-primary" size={32} />
-        <p className="text-lg">С любовью, Ольга и Алексей</p>
+        <p className="text-lg">С любовью, Алексей и Ольга</p>
         <p className="text-sm mt-2">24.04.2026</p>
       </footer>
     </div>
